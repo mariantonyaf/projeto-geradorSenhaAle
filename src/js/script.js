@@ -28,7 +28,7 @@ function getChartTypes(){
 function getPasswordSize(){
     const size = document.querySelector('#size').value
     if(isNaN(size) || size < 4 || size > 128){
-        alert('Tamanho inválido! Digite um número entre 4 e 128.')
+        message("TAMANHO INVÁLIDO! Digite um número entre 4 e 128.", "#dc2626")
     }
 
     return size
@@ -49,6 +49,18 @@ function generatePassword(size, chartTypes){
     }
 
     return passwordGenerate
+}
+
+function message(text, background){
+    Toastify({
+        text: text,
+        duration: 2000,
+        style: {
+          background: background,
+          boxShadow:"none"
+        },
+        onClick: function(){}
+      }).showToast();
 }
 
 document.querySelector('#generate').addEventListener('click', function(){
