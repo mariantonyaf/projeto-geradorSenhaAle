@@ -41,7 +41,16 @@ function randomCharType(chartTypes){
     return chartTypes[radomIndex][Math.floor(Math.random() * chartTypes[radomIndex].length)]
 }
 
+function generatePassword(size, chartTypes){
+    let passwordGenerate = ''
+
+    while(passwordGenerate.length < size){
+        passwordGenerate += randomCharType(chartTypes)
+    }
+
+    return passwordGenerate
+}
+
 document.querySelector('#generate').addEventListener('click', function(){
-    //console.log(randomCharType(getChartTypes()))
-    console.log(getPasswordSize())
+    console.log(generatePassword(getPasswordSize(), getChartTypes()))
 })
