@@ -81,3 +81,8 @@ document.querySelector('#generate').addEventListener('click', function(){
     document.querySelector('#password_container').classList.add('show')
     document.querySelector('#password').textContent = passwordGenerated
 })
+
+document.querySelector('#copy').addEventListener('click', function(){
+    navigator.clipboard.writeText(document.querySelector('#password').textContent)
+    message('Senha copiada com sucesso!', '#84cc16')
+})
