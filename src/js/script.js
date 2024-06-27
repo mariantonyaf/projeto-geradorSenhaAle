@@ -54,7 +54,7 @@ function generatePassword(size, chartTypes){
 function message(text, background){
     Toastify({
         text: text,
-        duration: 2000,
+        duration: 3000,
         style: {
           background: background,
           boxShadow:"none"
@@ -66,6 +66,15 @@ function message(text, background){
 document.querySelector('#generate').addEventListener('click', function(){
     const size = getPasswordSize()
     const charTypes = getChartTypes()
+
+    if(!size){
+        return
+    }
+
+    if(!charTypes.length){
+        message('Selecione pelo menos um caracter!', "#dc2626")
+        return
+    }
 
     const passwordGenerated = generatePassword(size, charTypes)
 
