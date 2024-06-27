@@ -31,3 +31,25 @@ body{
     align-items: center;
     gap: 12px;
 }
+
+#password_img{
+    width: 100px;
+}
+
+#title{
+    color: var(--color-neutral-1);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#password_container{
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-neutral-2);
+    color: var(--color-neutral-1);
+    border-radius: 8px;
+    padding: 8px 18px;
+}
