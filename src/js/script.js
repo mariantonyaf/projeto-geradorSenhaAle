@@ -40,5 +40,5 @@ function randomCharType(chartTypes){
 
 document.querySelector('#generate').addEventListener('click', function(){
     //console.log(randomCharType(getChartTypes()))
-    console.log(size)
+    console.log(getPasswordSize())
 })
