@@ -75,3 +75,40 @@ body{
 #copy:hover{
     color: var(--color-primary-2);
 }
+
+#password_items{
+    width: 400px;
+    background-color: var(--color-neutral-2);
+    color: var(--color-neutral-1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+}
+
+.item{
+    display: flex;
+    gap: 14px;
+}
+
+#size{
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+}
+
+#size::-webkit-inner-spin-button, #size::-webkit-outer-spin-button{
+    opacity: 1;
+}
+
+#size:focus{
+    outline: 1px solid var(--color-primary-1);
+}
+
+#generate{
+    background-color: var(--color-primary-1);
+    border: none;
+    margin-top: 12px;
+}
