@@ -28,7 +28,7 @@ function getChartTypes(){
 function getPasswordSize(){
     const size = document.querySelector('#size').value
     if(isNaN(size) || size < 4 || size > 128){
-        message("TAMANHO INVÁLIDO! Digite um número entre 4 e 128.", "#dc2626")
+        message("TAMANHO INVÁLIDO! Digite um número entre 4 e 128.", "warning")
     }
 
     return size
@@ -51,15 +51,14 @@ function generatePassword(size, chartTypes){
     return passwordGenerate
 }
 
-function message(text, background){
+function message(text, status = 'success'){
     Toastify({
         text: text,
         duration: 3000,
         style: {
-          background: background,
+          background: status === 'success' ? '#84cc16' : "#dc2626",
           boxShadow:"none"
-        },
-        onClick: function(){}
+        }
       }).showToast();
 }
 
@@ -72,7 +71,7 @@ document.querySelector('#generate').addEventListener('click', function(){
     }
 
     if(!charTypes.length){
-        message('Selecione pelo menos um caracter!', "#dc2626")
+        message('Selecione pelo menos um caracter!', "warning")
         return
     }
 
@@ -84,5 +83,5 @@ document.querySelector('#generate').addEventListener('click', function(){
 
 document.querySelector('#copy').addEventListener('click', function(){
     navigator.clipboard.writeText(document.querySelector('#password').textContent)
-    message('Senha copiada com sucesso!', '#84cc16')
+    message('Senha copiada com sucesso!', 'success')
 })
