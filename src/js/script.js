@@ -27,6 +27,9 @@ function getChartTypes(){
 
 function getPasswordSize(){
     const size = document.querySelector('#size').value
+    if(isNaN(size) || size < 4 || size > 128){
+        alert('Tamanho inválido! Digite um número entre 4 e 128.')
+    }
 
     return size
 }
